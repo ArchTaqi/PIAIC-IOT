@@ -4,13 +4,88 @@
 // mod control_flow;
 
 
+
+#[derive(Debug)]
+struct UserLocation {
+    city:String,
+    country:String
+}
+#[derive(Debug)]
+struct Student {
+    first_name:String,
+    last_name:String,
+    location:UserLocation
+}
+
+impl Student {
+    fn new (FirstName: &str,LastName: &str,Location: UserLocation) -> Student {
+        Student { FirstName: FirstName.to_string(),course: course.to_string(),marks: marks }
+    },
+
+    fn print(&self)->u32 { self.width * self.height }
+}
+ 
+
+
 fn main() {
     // types_and_variables::main();
     // control_flow::main();
-    check_positive_negative_zero(55);
-    print_arguments(25, 5.4, false);
-    println!("{:#?}", square_the_number(4));
+    // check_positive_negative_zero(55);
+    // print_arguments(25, 5.4, false);
+    // println!("{:#?}", square_the_number(4));
+
+    let default_location:(&str,&str) = ("Islamabad","Pakistan");
+
+
+    let student1 = Student {
+        first_name:String::from("Muhammad"),
+        last_name:String::from("Taqi"),
+        location: UserLocation {city:String::from("Islamabad"), country:String::from("Pakistan")}
+     };
+
+     println!("{:?}", student1);
+
+     // create another instance by using fields of first instance
+
+     let student2 = Student {
+        first_name:String::from("Muhammad"),
+        last_name:String::from("Turab"),
+        location: UserLocation {city:student1.location.city, country:student1.location.country}
+     };
+     println!("{:?}", student2);
+
+     let new_student = registration("Ali", "Salman", default_location);
+     println!("{:?}", new_student);
+    // let name = "Taqi".to_string();
+    // let course = "IOT".to_string();
+
+
+    // let student = Student::new(name.as_ref(), course.as_ref(),85);
+    // println!("{:#?}",student.name);
+
+    // let student_one:(&str,&str,u32) = (name.as_ref(), course.as_ref(), 28);
+    // check_tuple(student_one);
 }
+
+
+fn registration(first_name: &str,last_name: &str,location: (&str,&str))->Student {
+    let (city,country) = location;
+    let new_student = Student {
+        first_name:first_name.to_string(), 
+        last_name:last_name.to_string(), 
+        location: UserLocation {city:city.to_string(), country:country.to_string()} 
+    };
+    return new_student;
+}
+
+
+
+
+fn check_tuple(student: (&str,&str,u32)) {
+    println!("{:?}",student);
+}
+
+
 
 
 // Q # 1. Write a rust program, define a function that receives one argument of any suitable data
