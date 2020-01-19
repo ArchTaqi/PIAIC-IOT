@@ -1,0 +1,1 @@
+/Users/muhammadtaqi/projects/PIAIC-IOT/code/notification-app/notify-app/target/debug/libnotify_app.rlib: /Users/muhammadtaqi/projects/PIAIC-IOT/code/notification-app/notify-app/src/lib.rs /Users/muhammadtaqi/projects/PIAIC-IOT/code/notification-app/notify-lib/src/lib.rs /Users/muhammadtaqi/projects/PIAIC-IOT/code/notification-app/notify-lib/src/notify.rs
